@@ -1,6 +1,6 @@
 using namespace std;
 struct inventar{
-	char tip[21], marca[16], culoare[11];
+	char cat[21], marca[16], culoare[11];
 	double pret;
 	int cantitate;
 	bool disponibilitate;
@@ -10,7 +10,7 @@ void citire(inventar p[],int &n){
 	ifstream inFile("date.in");
 	inFile>>n;
 	for(int i=0;i<n;i++){
-		inFile>>p[i].tip>>p[i].marca>>p[i].culoare>>p[i].pret>>p[i].cantitate>>p[i].disponibilitate;
+		inFile>>p[i].cat>>p[i].marca>>p[i].culoare>>p[i].pret>>p[i].cantitate>>p[i].disponibilitate;
 	}
 	inFile.close();
 	
@@ -28,7 +28,7 @@ void afisare(inventar p[],int n){
      cout << setfill(' ');
 
      for (int i = 0; i < n; i++) {
-         cout << "| " << setw(20) << p[i].tip << " | "
+         cout << "| " << setw(20) << p[i].cat << " | "
          << setw(11) << p[i].marca << " | "
          << setw(10) << p[i].culoare << " | "
          << setw(10) << p[i].pret << " | "
@@ -39,7 +39,7 @@ void afisare(inventar p[],int n){
      cout << setfill('-') << setw(84) << '\n';
 }
 void adaugare(inventar p[],int &n){
-	cout<<"Introduceti tipul: ";cin>>p[n].tip;
+	cout<<"Introduceti tipul: ";cin>>p[n].cat;
 	cout<<"Itroduceti marca: ";cin>>p[n].marca;
 	cout<<"Introduceti culoarea: ";cin>>p[n].culoare;
 	cout<<"Introduceti pretul: ";cin>>p[n].pret;
@@ -79,7 +79,7 @@ void sort(inventar p[], int n, double minim, double maxim) {
           cout << setfill('-') << setw(84) << '\n';
      for (int i = 0; i < n; i++) {
          if(minim < p[i].pret && p[i].pret < maxim){
-             cout << setfill(' ') << "| " << setw(20) << p[i].tip << " | "
+             cout << setfill(' ') << "| " << setw(20) << p[i].cat << " | "
                  << setw(11) << p[i].marca << " | "
                  << setw(10) << p[i].culoare << " | "
                  << setw(10) << p[i].pret << " | "
@@ -93,7 +93,7 @@ void sort(inventar p[], int n, double minim, double maxim) {
 
 void filtruNume(inventar p[], int n) {
      char marca_cautata[50];
-	cout << "Introduceti marca de telefoane cautata: ";
+	cout << "Introduceti brandul cautat: ";
 	cin >> marca_cautata;
 	cout << "Telefoanele marca " << marca_cautata << " sunt:" << endl;
      cout << setfill('-') << setw(84) << '\n';
@@ -104,9 +104,9 @@ void filtruNume(inventar p[], int n) {
                  << setw(5) << "Cant" << " | "
                  << setw(8) << "Dispon" << " |" << endl;
           cout << setfill('-') << setw(84) << '\n';
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < n; i++) {
 		if (strcmp(p[i].marca, marca_cautata) == 0) {
-             cout << setfill(' ') << "| " << setw(20) << p[i].tip << " | "
+             cout << setfill(' ') << "| " << setw(20) << p[i].cat << " | "
                  << setw(11) << p[i].marca << " | "
                  << setw(10) << p[i].culoare << " | "
                  << setw(10) << p[i].pret << " | "
@@ -114,5 +114,33 @@ void filtruNume(inventar p[], int n) {
                  << setw(8) << p[i].disponibilitate << " |" << endl;
 		}
 	}
+     cout << setfill('-') << setw(84) << '\n';
+	cout << endl;
+}
+
+void filtruCat(inventar p[], int n) {
+     char cat_cautata[50];
+	cout << "Introduceti categoria cautata: ";
+	cin >> cat_cautata;
+	cout << "Telefoanele marca " << cat_cautata << " sunt:" << endl;
+     cout << setfill('-') << setw(84) << '\n';
+             cout << setfill(' ') << "| " << setw(20) << "Tip" << " | "
+                 << setw(11) << "Marca" << " | "
+                 << setw(10) << "Culoare" << " | "
+                 << setw(10) << "Pret" << " | "
+                 << setw(5) << "Cant" << " | "
+                 << setw(8) << "Dispon" << " |" << endl;
+          cout << setfill('-') << setw(84) << '\n';
+	for (int i = 0; i < n; i++) {
+		if (strcmp(p[i].cat, cat_cautata) == 0) {
+             cout << setfill(' ') << "| " << setw(20) << p[i].cat << " | "
+                 << setw(11) << p[i].marca << " | "
+                 << setw(10) << p[i].culoare << " | "
+                 << setw(10) << p[i].pret << " | "
+                 << setw(5) << p[i].cantitate << " | "
+                 << setw(8) << p[i].disponibilitate << " |" << endl;
+		}
+	}
+     cout << setfill('-') << setw(84) << '\n';
 	cout << endl;
 }

@@ -45,7 +45,7 @@ int main(){
 				break;
 			case 'f': 
 				cout << "Introduceti sub-optiunea dorita: ";
-				cout << "\na - filtru dupa pret\nb- filtru dupa nume\n";
+				cout << "\na - filtru dupa pret\nb- filtru dupa nume\nc- filtru dupa categorie\n";
 				cin >> action;
 				switch (action)
 				{
@@ -58,6 +58,11 @@ int main(){
 						// filtru dupa nume
 						filtruNume(produs, n);
 						break;
+
+					case 'c': 
+						// filtru dupa categorie
+						filtruCat(produs, n);
+						break; 
 
 					default:
 						cout << "Optiunea introdusa nu este valida. Reincearca.";
