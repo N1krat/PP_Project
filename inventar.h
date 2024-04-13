@@ -1,12 +1,12 @@
 using namespace std;
-struct inventar{
+struct stoc{
 	char cat[21], produs[16];
 	double pret;
 	int cantitate;
 	bool disponibilitate;
 };
 
-void citire(inventar p[],int &n){
+void citire(stoc p[],int &n){
 	ifstream inFile("date.in");
 	inFile>>n;
 	for(int i=0;i<n;i++){
@@ -29,7 +29,7 @@ void tab_sus(){
      cout << setfill(' ');
 }
 
-void afis(inventar p,int &nr){
+void afis(stoc p,int &nr){
      cout << "| "<< setw(5) << nr <<" | " 
           << setw(20) << p.cat << " | "
          << setw(11) << p.produs << " | "
@@ -39,7 +39,7 @@ void afis(inventar p,int &nr){
          nr++; 
 }
 
-void afisare(inventar p[],int n){
+void afisare(stoc p[],int n){
      int nr = 1; 
 	tab_sus();
 
@@ -48,7 +48,8 @@ void afisare(inventar p[],int n){
      }
      cout << setfill('-') << setw(84) << '\n';
 }
-void adaugare(inventar p[],int &n){
+
+void adaugare(stoc p[],int &n){
 	cout<<"Introduceti categoria: ";cin>>p[n].cat;
 	cout<<"Itroduceti produs: ";cin>>p[n].produs;
 	cout<<"Introduceti pretul: ";cin>>p[n].pret;
@@ -57,7 +58,7 @@ void adaugare(inventar p[],int &n){
 	n++;
 }
 
-void sort(inventar p[],int n){
+void sort(stoc p[],int n){
      cout << "Produsele sortate crescator dupa nume: " << endl;
      for(int i = 0; i < n - 1 ; i++){
           for(int j = 0; j < n - i - 1; j++){
@@ -72,7 +73,7 @@ void sort(inventar p[],int n){
      cout << endl; 
 }
 
-void sort(inventar p[], int n, double minim, double maxim) {
+void sort(stoc p[], int n, double minim, double maxim) {
      int nr = 1;
      cout << "Introduceti intervalul de preturi: "; 
      cout << endl << "Pretul minim: "; cin >> minim;
@@ -89,7 +90,7 @@ void sort(inventar p[], int n, double minim, double maxim) {
      cout << endl;
 }
 
-void filtruNume(inventar p[], int n) {
+void filtruNume(stoc p[], int n) {
      int nr = 1;
      char produs_cautat[50];
 	cout << "Introduceti produsul cautat: ";
@@ -106,7 +107,7 @@ void filtruNume(inventar p[], int n) {
 	cout << endl;
 }
 
-void filtruCat(inventar p[], int n) {
+void filtruCat(stoc p[], int n) {
      int nr = 1;
      char cat_cautata[50];
 	cout << "Introduceti categoria cautata: ";
