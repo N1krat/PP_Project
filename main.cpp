@@ -6,7 +6,7 @@
 using namespace std;
 fstream inFile; 
 int main(){
-	inventar produs[100];int n; 
+	stoc produs[100];int n; 
 	char action; 
 	float maxim, minim; 
 	citire(produs, n);
