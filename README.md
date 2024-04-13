@@ -15,4 +15,4 @@ TO-DO:
     b. dupa pret ✅
     c. dupa categorie ✅
 7. Salvarea datelor intr-un fisier, numele caruia se citeste de la Tastatura 
-8. Meniurile 4, 5, 6 vor contine submeniuri cu cel putin 3 optiuni fiecare 
+8. ! Meniurile 4, 5, 6 vor contine submeniuri cu cel putin 3 optiuni fiecare !
