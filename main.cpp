@@ -51,7 +51,7 @@ int main(){
 				{
 					case 'a':
 						// filtru dupa pret
-						filtru(produs, n, minim, maxim);
+						sort(produs, n, minim, maxim);
 						break;
 					default:
 						cout << "Optiunea introdusa nu este valida. Reincearca.";

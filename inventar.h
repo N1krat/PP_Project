@@ -47,6 +47,7 @@ void adaugare(inventar p[],int &n){
 	cout<<"Introduceti disponibilitatea (1/0): ";cin>>p[n].disponibilitate;
 	n++;
 }
+
 void sort(inventar p[],int n){
      cout << "Telefoanele sortate crescator dupa nume: " << endl;
      for(int i = 0; i < n - 1 ; i++){
@@ -65,7 +66,7 @@ void sort(inventar p[],int n){
 
 
 
-void filtru(inventar p[], int n, double minim, double maxim) {
+void sort(inventar p[], int n, double minim, double maxim) {
      cout << "Introduceti intervalul de preturi: "; 
      cout << endl << "Pretul minim: "; cin >> minim;
      cout << "Pretul maxim: "; cin >> maxim;
