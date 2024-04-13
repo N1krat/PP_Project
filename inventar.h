@@ -38,7 +38,15 @@ void afisare(inventar p[],int n){
 
      cout << setfill('-') << setw(84) << '\n';
 }
-
+void adaugare(inventar p[],int &n){
+	cout<<"Introduceti tipul: ";cin>>p[n].tip;
+	cout<<"Itroduceti marca: ";cin>>p[n].marca;
+	cout<<"Introduceti culoarea: ";cin>>p[n].culoare;
+	cout<<"Introduceti pretul: ";cin>>p[n].pret;
+	cout<<"Introduceti cantitatea:  ";cin>>p[n].cantitate;
+	cout<<"Introduceti disponibilitatea (1/0): ";cin>>p[n].disponibilitate;
+	n++;
+}
 void sort(inventar p[],int n){
      cout << "Telefoanele sortate crescator dupa nume: " << endl;
      for(int i = 0; i < n - 1 ; i++){
@@ -63,8 +71,6 @@ void filtru(inventar p[], int n, double minim, double maxim) {
      cout << "Pretul maxim: "; cin >> maxim;
     cout << "Telefoanele sortate crescator dupa pret pentru intervalul de pret intre "
          << minim << " si " << maxim << ": " << endl;
-
-          cout << "Telefoanele sortate in intervalul de preturi: " << endl;
          cout << setfill('-') << setw(84) << '\n';
              cout << setfill(' ') << "| " << setw(20) << "Tip" << " | "
                  << setw(11) << "Marca" << " | "

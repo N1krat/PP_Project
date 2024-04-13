@@ -12,7 +12,8 @@ int main(){
 	citire(produs, n);
 	
 	while(true){ 
-		cout << "Introduceti optiunea dorita: "; 
+		cout << "Introduceti optiunea dorita: ";
+		cout << "\na - afisare\nb - adaugare\nc - sortare\nf - filtrare\n0 - iesire\n"; 
 		cin >> action;
 		switch (action){
 			// afisarea datelor originale
@@ -20,9 +21,14 @@ int main(){
 				afisare(produs, n);
 				break;
 
-			// afisarea datelor sortate
 			case 'b':
+				adaugare(produs, n);
+				break;
+
+			// afisarea datelor sortate
+			case 'c':
 				cout << "Introduceti sub-optiunea dorita: "; 
+				cout << "\na - sortare dupa nume\n";
 				cin >> action;
 				switch (action)
 				{
@@ -39,6 +45,7 @@ int main(){
 				break;
 			case 'f': 
 				cout << "Introduceti sub-optiunea dorita: ";
+				cout << "\na - filtru dupa pret\n";
 				cin >> action;
 				switch (action)
 				{
