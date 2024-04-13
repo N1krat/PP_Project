@@ -15,8 +15,8 @@ void citire(inventar p[],int &n){
 	inFile.close();
 	
 }
-void afisare(inventar p[],int n){
-     int nr = 1; 
+
+void tab_sus(){
 	cout << setfill('-') << setw(84) << '\n';
      cout << setfill(' ');
      cout << "| " << setw(5) << "Nr." << " | "
@@ -27,15 +27,24 @@ void afisare(inventar p[],int n){
      << setw(8) << "Dispon" << " |" << endl;
      cout << setfill('-') << setw(84) << '\n';
      cout << setfill(' ');
+}
+
+void afis(inventar p,int &nr){
+     cout << "| "<< setw(5) << nr <<" | " 
+          << setw(20) << p.cat << " | "
+         << setw(11) << p.produs << " | "
+         << setw(10) << p.pret << " | "
+         << setw(5) << p.cantitate << " | "
+         << setw(8) << p.disponibilitate << " |" << endl;
+         nr++; 
+}
+
+void afisare(inventar p[],int n){
+     int nr = 1; 
+	tab_sus();
 
      for (int i = 0; i < n; i++) {
-         cout << "| "<< setw(5) << nr <<" | " 
-          << setw(20) << p[i].cat << " | "
-         << setw(11) << p[i].produs << " | "
-         << setw(10) << p[i].pret << " | "
-         << setw(5) << p[i].cantitate << " | "
-         << setw(8) << p[i].disponibilitate << " |" << endl;
-         nr++; 
+         afis(p[i], nr); 
      }
      cout << setfill('-') << setw(84) << '\n';
 }
@@ -68,25 +77,12 @@ void sort(inventar p[], int n, double minim, double maxim) {
      cout << "Introduceti intervalul de preturi: "; 
      cout << endl << "Pretul minim: "; cin >> minim;
      cout << "Pretul maxim: "; cin >> maxim;
-    cout << "Produsele sortate crescator dupa pret pentru intervalul de pret intre "
-         << minim << " si " << maxim << ": " << endl;
-         cout << setfill('-') << setw(84) << '\n';
-             cout << setfill(' ') << "| " << setw(5) << "Nr." << " | " 
-                 << setw(20) << "Categorie" << " | "
-                 << setw(11) << "Produs" << " | "
-                 << setw(10) << "Pret" << " | "
-                 << setw(5) << "Cant" << " | "
-                 << setw(8) << "Dispon" << " |" << endl;
-          cout << setfill('-') << setw(84) << '\n';
+    cout << "Produsele sortate crescator dupa pret pentru intervalul de pret intre "; 
+    cout << minim << " si " << maxim << " sunt: " << endl;
+     tab_sus();
      for (int i = 0; i < n; i++) {
          if(minim < p[i].pret && p[i].pret < maxim){
-             cout << setfill(' ') << "| " << setw(5) << nr <<" | " 
-              << setw(20) << p[i].cat << " | "
-                 << setw(11) << p[i].produs << " | "
-                 << setw(10) << p[i].pret << " | "
-                 << setw(5) << p[i].cantitate << " | "
-                 << setw(8) << p[i].disponibilitate << " |" << endl;
-                 nr++; 
+             afis(p[i], nr); 
          }
      }
      cout << setfill('-') << setw(84) << '\n';
@@ -100,21 +96,10 @@ void filtruNume(inventar p[], int n) {
 	cin >> produs_cautat;
 	cout << produs_cautat << " sunt:" << endl;
      cout << setfill('-') << setw(84) << '\n';
-             cout << setfill(' ') << "| " << setw(5) << "Nr." << " | " 
-             << setw(20) << "Categorie" << " | "
-                 << setw(11) << "Produs" << " | "
-                 << setw(10) << "Pret" << " | "
-                 << setw(5) << "Cant" << " | "
-                 << setw(8) << "Dispon" << " |" << endl;
-          cout << setfill('-') << setw(84) << '\n';
+          tab_sus();
 	for (int i = 0; i < n; i++) {
 		if (strcmp(p[i].produs, produs_cautat) == 0) {
-             cout << setfill(' ') << "| " << setw(5) << nr <<" | " << setw(20) << p[i].cat << " | "
-                 << setw(11) << p[i].produs << " | "
-                 << setw(10) << p[i].pret << " | "
-                 << setw(5) << p[i].cantitate << " | "
-                 << setw(8) << p[i].disponibilitate << " |" << endl;
-                 nr++; 
+             afis(p[i], nr); 
 		}    
 	}
      cout << setfill('-') << setw(84) << '\n';
@@ -128,22 +113,10 @@ void filtruCat(inventar p[], int n) {
 	cin >> cat_cautata;
 	cout << "Telefoanele produs " << cat_cautata << " sunt:" << endl;
      cout << setfill('-') << setw(84) << '\n';
-             cout << setfill(' ') << "| " << setw(5) << "Nr." << " | " 
-             << setw(20) << "Categorie" << " | "
-                 << setw(11) << "Produs" << " | "
-                 << setw(10) << "Pret" << " | "
-                 << setw(5) << "Cant" << " | "
-                 << setw(8) << "Dispon" << " |" << endl;
-          cout << setfill('-') << setw(84) << '\n';
+             tab_sus();
 	for (int i = 0; i < n; i++) {
 		if (strcmp(p[i].cat, cat_cautata) == 0) {
-             cout << setfill(' ') << "| " << setw(5) << nr <<" | "  
-             << setw(20) << p[i].cat << " | "
-                 << setw(11) << p[i].produs << " | "
-                 << setw(10) << p[i].pret << " | "
-                 << setw(5) << p[i].cantitate << " | "
-                 << setw(8) << p[i].disponibilitate << " |" << endl;
-                 nr++; 
+             afis(p[i], nr); 
 		}
 	}
      cout << setfill('-') << setw(84) << '\n';
