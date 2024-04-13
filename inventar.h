@@ -60,11 +60,8 @@ void sort(inventar p[],int n){
                }
           }
      }
-
      cout << endl; 
 }
-
-
 
 void sort(inventar p[], int n, double minim, double maxim) {
      cout << "Introduceti intervalul de preturi: "; 
@@ -92,4 +89,30 @@ void sort(inventar p[], int n, double minim, double maxim) {
      }
      cout << setfill('-') << setw(84) << '\n';
      cout << endl;
+}
+
+void filtruNume(inventar p[], int n) {
+     char marca_cautata[50];
+	cout << "Introduceti marca de telefoane cautata: ";
+	cin >> marca_cautata;
+	cout << "Telefoanele marca " << marca_cautata << " sunt:" << endl;
+     cout << setfill('-') << setw(84) << '\n';
+             cout << setfill(' ') << "| " << setw(20) << "Tip" << " | "
+                 << setw(11) << "Marca" << " | "
+                 << setw(10) << "Culoare" << " | "
+                 << setw(10) << "Pret" << " | "
+                 << setw(5) << "Cant" << " | "
+                 << setw(8) << "Dispon" << " |" << endl;
+          cout << setfill('-') << setw(84) << '\n';
+	for (int i = 0; i < 10; i++) {
+		if (strcmp(p[i].marca, marca_cautata) == 0) {
+             cout << setfill(' ') << "| " << setw(20) << p[i].tip << " | "
+                 << setw(11) << p[i].marca << " | "
+                 << setw(10) << p[i].culoare << " | "
+                 << setw(10) << p[i].pret << " | "
+                 << setw(5) << p[i].cantitate << " | "
+                 << setw(8) << p[i].disponibilitate << " |" << endl;
+		}
+	}
+	cout << endl;
 }
