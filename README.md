@@ -1,5 +1,3 @@
-# PP_Project
-
 TO-DO: 
 1. Afisarea informatiei in forma tabulara ✅
 2. Adaugarea informatiei ✅
