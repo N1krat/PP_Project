@@ -49,20 +49,21 @@ void adaugare(inventar p[],int &n){
 }
 void sort(inventar p[],int n){
      cout << "Telefoanele sortate crescator dupa nume: " << endl;
-     inventar aux; 
-     int f; 
-     do { 
-          f = 0; 
-          for (int i = 0; i < n - 1; i++) {
-               if (p[i].pret < p[i + 1].pret) {
-                    aux = p[i + 1]; 
-                    p[i + 1] = p[i];
-                    p[i] = aux;
-                }  
+     for(int i = 0; i < n - 1 ; i++){
+          for(int j = 0; j < n - i - 1; j++){
+               if(strcmp(p[j].marca, p[j+1].marca) > 0){
+                    char temp[50];
+                    strcpy(temp, p[j].marca);
+                    strcpy(p[j].marca, p[j+1].marca);
+                    strcpy(p[j+1].marca, temp);
+               }
           }
-     } while (f != 0); 
+     }
+
      cout << endl; 
 }
+
+
 
 void filtru(inventar p[], int n, double minim, double maxim) {
      cout << "Introduceti intervalul de preturi: "; 
