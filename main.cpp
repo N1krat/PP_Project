@@ -10,11 +10,13 @@ int main(){
 	char action; 
 	float maxim, minim; 
 	citire(produs, n);
-	
+	cout << "Datele din date.in a fost citita cu succes!" << endl; 
+
 	while(true){ 
 		cout << "Introduceti optiunea dorita: ";
 		cout << "\na - afisare\nb - adaugare\nd - sortare\ne - cautare\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
 		cin >> action;
+
 		switch (action){
 			// afisarea datelor originale
 			case 'a':
@@ -25,7 +27,18 @@ int main(){
 				adaugare(produs, n);
 				break;
 
-			case 'c': 
+			case 'c': { 
+				afisare(produs ,n);
+				cout<<"Cite elemente doriti sa stergeti?"<<endl;
+				int ids;
+				cin>>ids;
+				int e[ids];
+				cout<<"Ce elemene doriti sa stergeti(nr din tabel)"<<endl;
+				for (int i=0;i<ids;i++){
+					cin>>e[i];
+				}	
+				sterge(produs, n, e, ids);
+			} 
 			break; 
 			
 			// afisarea datelor sortate
@@ -100,6 +113,7 @@ int main(){
 
 			case '0': 
 				// iesire
+				cout << "Multumim ca utilizati programul de inventar!";
 				return 0; 
 			default: 
 				cout << "Optiunea introdusa nu este valida. Reincearca.";

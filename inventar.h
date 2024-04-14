@@ -60,9 +60,21 @@ void adaugare(stoc p[],int &n){
 	cout<<"Introduceti disponibilitatea (1/0): ";cin>>p[n].disponibilitate;
 	n++;
 }
-
 // Functiile de stergere
-
+void sterge(inventar p[], int &n, int v[], int sizev){
+	for(int i=0;i<sizev;i++){
+		if(v[i]!=n-1){
+			for(int j=v[i]-1;j<n-1;j++){
+				p[j]=p[j+1];	
+			}
+			for(int k=0;k<sizev;k++){
+				--v[k];
+			}
+		}
+		--n;
+	}
+	afisare(p, n);
+}
 
 // Functiile de sortare
 void sort(stoc p[],int &n){
