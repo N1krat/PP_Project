@@ -13,7 +13,7 @@ int main(){
 	
 	while(true){ 
 		cout << "Introduceti optiunea dorita: ";
-		cout << "\na - afisare\nb - adaugare\nc - sortare\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
+		cout << "\na - afisare\nb - adaugare\nd - sortare\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
 		cin >> action;
 		switch (action){
 			// afisarea datelor originale
@@ -24,9 +24,9 @@ int main(){
 			case 'b':
 				adaugare(produs, n);
 				break;
-
+			
 			// afisarea datelor sortate
-			case 'c':
+			case 'd':
 				cout << "Introduceti sub-optiunea dorita: "; 
 				cout << "\na - sortare dupa nume\n";
 				cin >> action;
@@ -34,7 +34,7 @@ int main(){
 				{
 					case 'a':
 						// lista sortata dupa nume
-						sort(produs, n);
+						sort(produs, n); 
 						afisare(produs, n);
 						break;
 			
@@ -43,6 +43,11 @@ int main(){
 						break;
 				}
 				break;
+
+			case 'e': 
+				cautare(produs, n);
+				break;
+				
 			case 'f': 
 				cout << "Introduceti sub-optiunea dorita: ";
 				cout << "\na - filtru dupa pret\nb- filtru dupa nume\nc- filtru dupa categorie\n";
@@ -50,12 +55,12 @@ int main(){
 				switch (action)
 				{
 					case 'a':
-						// filtru dupa pret
+						// filtru dupa interval de preturi
 						sort(produs, n, minim, maxim);
 						break;
 
 					case 'b': 
-						// filtru dupa nume
+						// filtru dupa produs
 						filtruNume(produs, n);
 						break;
 
@@ -69,7 +74,6 @@ int main(){
 						break;
 				}
 				break;
-
 
 			case '0': 
 				// iesire

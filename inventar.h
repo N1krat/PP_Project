@@ -13,7 +13,6 @@ void citire(stoc p[],int &n){
 		inFile>>p[i].cat>>p[i].prod>>p[i].tara>>p[i].pret>>p[i].cantitate>>p[i].disponibilitate;
 	}
 	inFile.close();
-	
 }
 
 void tab_sus(){
@@ -32,13 +31,13 @@ void tab_sus(){
 
 void afis(stoc p,int &nr){
      cout << "| "<< setw(5) << nr <<" | " 
-          << setw(15) << p.cat << " | "
-         << setw(11) << p.prod << " | "
-         << setw(15) << p.tara << " | "
-         << setw(10) << p.pret << " | "
-         << setw(5) << p.cantitate << " | "
-         << setw(8) << p.disponibilitate << " |" << endl;
-         nr++; 
+     << setw(15) << p.cat << " | "
+     << setw(11) << p.prod << " | "
+     << setw(15) << p.tara << " | "
+     << setw(10) << p.pret << " | "
+     << setw(5) << p.cantitate << " | "
+     << setw(8) << p.disponibilitate << " |" << endl;
+     nr++; 
 }
 
 void afisare(stoc p[],int n){
@@ -61,8 +60,9 @@ void adaugare(stoc p[],int &n){
 	n++;
 }
 
-void sort(stoc p[],int n){
-     cout << "prodele sortate crescator dupa nume: " << endl;
+void sort(stoc p[],int &n){
+     int nr = 1; 
+     cout << "Produsele sortate dupa alfabet: " << endl;
      for(int i = 0; i < n - 1 ; i++){
           for(int j = 0; j < n - i - 1; j++){
                if(strcmp(p[j].prod, p[j+1].prod) > 0){
@@ -124,3 +124,21 @@ void filtruCat(stoc p[], int n) {
      cout << setfill('-') << setw(92) << '\n';
 	cout << endl;
 }
+
+
+void cautare(stoc p[], int n) {
+     int nr = 1;
+     char prod_cautata[50];
+	cout << "Introduceti categoria cautata: ";
+	cin >> prod_cautata;
+	cout << "Produsele din categoria " << prod_cautata << " sunt:" << endl;
+     tab_sus();
+	for (int i = 0; i < n; i++) {
+		if (strcmp(p[i].prod, prod_cautata) == 0) {
+             afis(p[i], nr); 
+		}
+	}
+     cout << setfill('-') << setw(92) << '\n';
+	cout << endl;
+}
+
