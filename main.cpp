@@ -44,7 +44,7 @@ int main(){
 			// afisarea datelor sortate
 			case 'd':
 				cout << "Introduceti sub-optiunea dorita: "; 
-				cout << "\na - sortare dupa pret\nb - sortare dupa nume\n";
+				cout << "\na - sortare dupa pret\nb - sortare dupa nume\nc - sortare dupa disponibilitate\n";
 				cin >> action;
 				switch (action)
 				{
@@ -57,6 +57,9 @@ int main(){
 						// lista sortata dupa nume
 						sort(produs, n);
 						afisare(produs, n);
+						break; 
+					case 'c': 
+						sortDis(produs, n);
 						break; 
 
 					default:

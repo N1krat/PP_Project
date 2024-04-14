@@ -78,7 +78,7 @@ void sterge(stoc p[], int &n, int v[], int sizev){
 }
 
 // Functiile de sortare
-void schimbAr(stoc* p1, stoc* p2, int size){
+void schimb(stoc* p1, stoc* p2, int size){
     for(int i = 0; i < size; i++){
         stoc temp = p1[i];
         p1[i] = p2[i];
@@ -94,7 +94,7 @@ void sort(stoc p[],int &n){
 		for(int i=0;i<n-1;i++){
                for(int j = 0; j < n - i - 1; j++){
                     if(strcmp(p[j].prod, p[j+1].prod) > 0){
-                         schimbAr(&p[j], &p[j+1], 1);
+                         schimb(&p[j], &p[j+1], 1);
                     }
                } 
 		}
@@ -122,7 +122,19 @@ void sortPret(stoc p[],int &n){
 }
 
 void sortDis(stoc p[],int &n){
-     
+     int dissnigga;
+     cout << "Introduceti disponibilitatea dorita: ";
+     cin >> dissnigga; 
+     int nr = 1;
+     cout << "Produsele disponibile sunt:" << endl;
+     tab_sus();
+	for (int i = 0; i < n; i++) {
+		if (p[i].disponibilitate > dissnigga) {
+             afis(p[i], nr); 
+		}
+	}
+     cout << setfill('-') << setw(92) << '\n';
+	cout << endl;
 }
 
 // Functiile de filtrare
