@@ -50,6 +50,7 @@ void afisare(stoc p[],int n){
      cout << setfill('-') << setw(92) << '\n';
 }
 
+// Functiile de adaugare
 void adaugare(stoc p[],int &n){
 	cout<<"Introduceti categoria: ";cin>>p[n].cat;
 	cout<<"Itroduceti prod: ";cin>>p[n].prod;
@@ -60,6 +61,10 @@ void adaugare(stoc p[],int &n){
 	n++;
 }
 
+// Functiile de stergere
+
+
+// Functiile de sortare
 void sort(stoc p[],int &n){
      int nr = 1; 
      cout << "Produsele sortate dupa alfabet: " << endl;
@@ -76,6 +81,8 @@ void sort(stoc p[],int &n){
      cout << endl; 
 }
 
+
+// Functiile de filtrare
 void sort(stoc p[], int n, double minim, double maxim) {
      int nr = 1;
      cout << "Introduceti intervalul de preturi: "; 
@@ -125,13 +132,13 @@ void filtruCat(stoc p[], int n) {
 	cout << endl;
 }
 
-
+// Functii de cautare
 void cautare(stoc p[], int n) {
      int nr = 1;
      char prod_cautata[50];
-	cout << "Introduceti categoria cautata: ";
+	cout << "Introduceti produsul dorit: ";
 	cin >> prod_cautata;
-	cout << "Produsele din categoria " << prod_cautata << " sunt:" << endl;
+	cout << "Cautarea dorita de " << prod_cautata << " sunt:" << endl;
      tab_sus();
 	for (int i = 0; i < n; i++) {
 		if (strcmp(p[i].prod, prod_cautata) == 0) {
@@ -141,7 +148,6 @@ void cautare(stoc p[], int n) {
      cout << setfill('-') << setw(92) << '\n';
 	cout << endl;
 }
-
 
 void cautareDisp(stoc p[], int n) {
      int nr = 1;
@@ -156,5 +162,19 @@ void cautareDisp(stoc p[], int n) {
 	cout << endl;
 }
 
-
+void cautareCat(stoc p[], int n) {
+     int nr = 1;
+     char cat_cautata[50];
+	cout << "Introduceti categoria cautata: ";
+	cin >> cat_cautata;
+	cout << "Produsele din categoria " << cat_cautata << " sunt:" << endl;
+     tab_sus();
+	for (int i = 0; i < n; i++) {
+		if (strcmp(p[i].cat, cat_cautata) == 0) {
+             afis(p[i], nr); 
+		}
+	}
+     cout << setfill('-') << setw(92) << '\n';
+	cout << endl;
+}
 

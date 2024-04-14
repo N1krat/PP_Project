@@ -24,6 +24,9 @@ int main(){
 			case 'b':
 				adaugare(produs, n);
 				break;
+
+			case 'c': 
+			break; 
 			
 			// afisarea datelor sortate
 			case 'd':
@@ -44,9 +47,10 @@ int main(){
 				}
 				break;
 
+			// Cautarea produselor
 			case 'e': 
 				cout << "Introduceti sub-optiunea dorita: "; 
-				cout << "\na - cautare dupa produs\nb - cautare dupa disponibilitate\nc -  \n";
+				cout << "\na - cautare dupa produs\nb - cautare dupa disponibilitate\nc - dupa categorie\n";
 				cin >> action;
 				switch (action)
 				{
@@ -57,7 +61,10 @@ int main(){
 					case 'b': 
 						cautareDisp(produs, n);
 						break;
-
+					case 'c': 
+						cautareCat(produs, n);
+						break;
+					
 					default:
 						cout << "Optiunea introdusa nu este valida. Reincearca.";
 						break;
@@ -66,7 +73,7 @@ int main(){
 
 			case 'f': 
 				cout << "Introduceti sub-optiunea dorita: ";
-				cout << "\na - filtru dupa pret\nb- filtru dupa nume\nc- filtru dupa categorie\n";
+				cout << "\na - filtru dupa pret\nb - filtru dupa nume\nc - filtru dupa categorie\n";
 				cin >> action;
 				switch (action)
 				{

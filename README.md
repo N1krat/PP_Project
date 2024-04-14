@@ -6,8 +6,8 @@ TO-DO:
     a. dupa produs 
     b. dupa pret
     c. dupa disponibilitate
-5. Cautarea informatiei: ⚒️
-    a. dupa categorie 
+5. Cautarea informatiei: ✅
+    a. dupa categorie ✅
     b. dupa produs ✅
     c. dupa disponibilitate ✅
 6. Operatii de filtrare a datelor: ✅
@@ -15,4 +15,4 @@ TO-DO:
     b. dupa produs ✅
     c. dupa categorie ✅
 7. Salvarea datelor intr-un fisier, numele caruia se citeste de la Tastatura 
-8. ! Meniurile 4, 5, 6 vor contine submeniuri cu cel putin 3 optiuni fiecare ! ⏯️
+8. ! Meniurile 4, 5, 6 vor contine submeniuri cu cel putin 3 optiuni fiecare ! ✅
