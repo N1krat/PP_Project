@@ -1,6 +1,6 @@
 using namespace std;
 struct stoc{
-	char cat[21], prod[16];
+	char cat[21], prod[16], tara[21];
 	double pret;
 	int cantitate;
 	bool disponibilitate;
@@ -10,29 +10,31 @@ void citire(stoc p[],int &n){
 	ifstream inFile("date.in");
 	inFile>>n;
 	for(int i=0;i<n;i++){
-		inFile>>p[i].cat>>p[i].prod>>p[i].pret>>p[i].cantitate>>p[i].disponibilitate;
+		inFile>>p[i].cat>>p[i].prod>>p[i].tara>>p[i].pret>>p[i].cantitate>>p[i].disponibilitate;
 	}
 	inFile.close();
 	
 }
 
 void tab_sus(){
-	cout << setfill('-') << setw(84) << '\n';
+	cout << setfill('-') << setw(92) << '\n';
      cout << setfill(' ');
      cout << "| " << setw(5) << "Nr." << " | "
-     << setw(20) << "Categorie" << " | "
-     << setw(11) << "prod" << " | "
+     << setw(15) << "Categorie" << " | "
+     << setw(11) << "Produsul" << " | "
+     << setw(15) << "Tara de Orig" << " | "
      << setw(10) << "Pret" << " | "
      << setw(5) << "Cant" << " | "
      << setw(8) << "Dispon" << " |" << endl;
-     cout << setfill('-') << setw(84) << '\n';
+     cout << setfill('-') << setw(92) << '\n';
      cout << setfill(' ');
 }
 
 void afis(stoc p,int &nr){
      cout << "| "<< setw(5) << nr <<" | " 
-          << setw(20) << p.cat << " | "
+          << setw(15) << p.cat << " | "
          << setw(11) << p.prod << " | "
+         << setw(15) << p.tara << " | "
          << setw(10) << p.pret << " | "
          << setw(5) << p.cantitate << " | "
          << setw(8) << p.disponibilitate << " |" << endl;
@@ -46,12 +48,13 @@ void afisare(stoc p[],int n){
      for (int i = 0; i < n; i++) {
          afis(p[i], nr); 
      }
-     cout << setfill('-') << setw(84) << '\n';
+     cout << setfill('-') << setw(92) << '\n';
 }
 
 void adaugare(stoc p[],int &n){
 	cout<<"Introduceti categoria: ";cin>>p[n].cat;
 	cout<<"Itroduceti prod: ";cin>>p[n].prod;
+     cout<<"Introduceti tara de origine: "; cin>>p[n].tara;
 	cout<<"Introduceti pretul: ";cin>>p[n].pret;
 	cout<<"Introduceti cantitatea:  ";cin>>p[n].cantitate;
 	cout<<"Introduceti disponibilitatea (1/0): ";cin>>p[n].disponibilitate;
@@ -78,7 +81,7 @@ void sort(stoc p[], int n, double minim, double maxim) {
      cout << "Introduceti intervalul de preturi: "; 
      cout << endl << "Pretul minim: "; cin >> minim;
      cout << "Pretul maxim: "; cin >> maxim;
-    cout << "prodele sortate crescator dupa pret pentru intervalul de pret intre "; 
+    cout << "Prodele filtrate in intervalul de pret: "; 
     cout << minim << " si " << maxim << " sunt: " << endl;
      tab_sus();
      for (int i = 0; i < n; i++) {
@@ -86,24 +89,23 @@ void sort(stoc p[], int n, double minim, double maxim) {
              afis(p[i], nr); 
          }
      }
-     cout << setfill('-') << setw(84) << '\n';
+     cout << setfill('-') << setw(92) << '\n';
      cout << endl;
 }
 
 void filtruNume(stoc p[], int n) {
      int nr = 1;
      char prod_cautat[50];
-	cout << "Introduceti produl cautat: ";
+	cout << "Introduceti produsul cautat: ";
 	cin >> prod_cautat;
 	cout << prod_cautat << " sunt:" << endl;
-     cout << setfill('-') << setw(84) << '\n';
-          tab_sus();
+     tab_sus();
 	for (int i = 0; i < n; i++) {
 		if (strcmp(p[i].prod, prod_cautat) == 0) {
              afis(p[i], nr); 
 		}    
 	}
-     cout << setfill('-') << setw(84) << '\n';
+     cout << setfill('-') << setw(92) << '\n';
 	cout << endl;
 }
 
@@ -112,14 +114,13 @@ void filtruCat(stoc p[], int n) {
      char cat_cautata[50];
 	cout << "Introduceti categoria cautata: ";
 	cin >> cat_cautata;
-	cout << "Telefoanele prod " << cat_cautata << " sunt:" << endl;
-     cout << setfill('-') << setw(84) << '\n';
-             tab_sus();
+	cout << "Produsele filtrate dupa categoria " << cat_cautata << " sunt:" << endl;
+     tab_sus();
 	for (int i = 0; i < n; i++) {
 		if (strcmp(p[i].cat, cat_cautata) == 0) {
              afis(p[i], nr); 
 		}
 	}
-     cout << setfill('-') << setw(84) << '\n';
+     cout << setfill('-') << setw(92) << '\n';
 	cout << endl;
 }
