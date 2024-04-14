@@ -122,17 +122,25 @@ void sortPret(stoc p[],int &n){
 }
 
 void sortDis(stoc p[],int &n){
-     int dissnigga;
+     int dis;
      cout << "Introduceti disponibilitatea dorita: ";
-     cin >> dissnigga; 
+     cin >> dis; 
      int nr = 1;
      cout << "Produsele disponibile sunt:" << endl;
      tab_sus();
 	for (int i = 0; i < n; i++) {
-		if (p[i].disponibilitate > dissnigga) {
+		if (p[i].disponibilitate == dis) {
              afis(p[i], nr); 
 		}
 	}
+     cout << setfill('-') << setw(92) << '\n';
+     cout << "Produsele indisponibile sunt: " << endl; 
+     tab_sus();
+     for (int i = 0; i < n; i++){ 
+          if (p[i].disponibilitate != dis){
+               afis(p[i], nr);
+          } 
+     }
      cout << setfill('-') << setw(92) << '\n';
 	cout << endl;
 }
