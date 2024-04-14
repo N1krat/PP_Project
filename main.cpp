@@ -12,7 +12,7 @@ int main(){
 	char action; 
 	float maxim, minim; 
 	citire(produs, n);
-	cout << "Datele din date.in a fost citita cu succes!" << endl; 
+	cout << "Datele din date.in au fost citite cu succes!" << endl; 
 
 	while(true){ 
 		cout << "Introduceti optiunea dorita: ";
@@ -37,7 +37,7 @@ int main(){
 				int ids;
 				cin>>ids;
 				int elemt[ids];
-				cout<<"Ce elemene doriti sa stergeti (nr lor din tabel): " << endl;
+				cout<<"Ce elemene doriti sa stergeti? Introduceti numarul produselor din tabel: " << endl;
 				for (int i=0;i<ids;i++){
 					cin>>elemt[i];
 				}	
@@ -135,7 +135,6 @@ int main(){
 
 			case '0': 
 				// iesire
-				cout << "Multumim ca utilizati programul de inventar!";
 				return 0; 
 			default: 
 				cout << "Optiunea introdusa nu este valida. Reincearca.";
