@@ -84,6 +84,7 @@ int main(){
 				}
 				break;
 
+			// filtrarea
 			case 'f': 
 				cout << "Introduceti sub-optiunea dorita: ";
 				cout << "\na - filtru dupa pret\nb - filtru dupa nume\nc - filtru dupa categorie\n";
@@ -92,12 +93,12 @@ int main(){
 				{
 					case 'a':
 						// filtru dupa interval de preturi
-						sort(produs, n, minim, maxim);
+						filtru(produs, n, minim, maxim);
 						break;
 
 					case 'b': 
 						// filtru dupa produs
-						filtruNume(produs, n);
+						filtru(produs, n);
 						break;
 
 					case 'c': 

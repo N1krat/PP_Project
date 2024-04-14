@@ -96,7 +96,7 @@ void sort(stoc p[],int &n){
 
 
 // Functiile de filtrare
-void sort(stoc p[], int n, double minim, double maxim) {
+void filtru(stoc p[], int n, double minim, double maxim) {
      int nr = 1;
      cout << "Introduceti intervalul de preturi: "; 
      cout << endl << "Pretul minim: "; cin >> minim;
@@ -113,7 +113,7 @@ void sort(stoc p[], int n, double minim, double maxim) {
      cout << endl;
 }
 
-void filtruNume(stoc p[], int n) {
+void filtru(stoc p[], int n) {
      int nr = 1;
      char prod_cautat[50];
 	cout << "Introduceti produsul cautat: ";
