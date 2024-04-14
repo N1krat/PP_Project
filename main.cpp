@@ -44,15 +44,20 @@ int main(){
 			// afisarea datelor sortate
 			case 'd':
 				cout << "Introduceti sub-optiunea dorita: "; 
-				cout << "\na - sortare dupa nume\n";
+				cout << "\na - sortare dupa pret\nb - sortare dupa nume\n";
 				cin >> action;
 				switch (action)
 				{
 					case 'a':
-						// lista sortata dupa nume
-						sort(produs, n); 
+						// lista sortata dupa pret
+						sortPret(produs, n); 
 						afisare(produs, n);
 						break;
+					case 'b':
+						// lista sortata dupa nume
+						sort(produs, n);
+						afisare(produs, n);
+						break; 
 
 					default:
 						cout << "Optiunea introdusa nu este valida. Reincearca.";

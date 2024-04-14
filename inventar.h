@@ -78,22 +78,52 @@ void sterge(stoc p[], int &n, int v[], int sizev){
 }
 
 // Functiile de sortare
-void sort(stoc p[],int &n){
-     int nr = 1; 
-     cout << "Produsele sortate dupa alfabet: " << endl;
-     for(int i = 0; i < n - 1 ; i++){
-          for(int j = 0; j < n - i - 1; j++){
-               if(strcmp(p[j].prod, p[j+1].prod) > 0){
-                    char temp[50];
-                    strcpy(temp, p[j].prod);
-                    strcpy(p[j].prod, p[j+1].prod);
-                    strcpy(p[j+1].prod, temp);
-               }
-          }
-     }
-     cout << endl; 
+void schimbAr(stoc* p1, stoc* p2, int size){
+    for(int i = 0; i < size; i++){
+        stoc temp = p1[i];
+        p1[i] = p2[i];
+        p2[i] = temp;
+    }
 }
 
+void sort(stoc p[],int &n){
+     int f;
+     cout << "Produsele sortate dupa alfabet: " << endl;
+	do{
+		f=0;
+		for(int i=0;i<n-1;i++){
+               for(int j = 0; j < n - i - 1; j++){
+                    if(strcmp(p[j].prod, p[j+1].prod) > 0){
+                         schimbAr(&p[j], &p[j+1], 1);
+                    }
+               } 
+		}
+	}while(f!=0);
+}
+
+void schimb(stoc *p1, stoc *p2){
+	stoc aux; 
+	aux = *p1; 
+	*p1=*p2;
+	*p2=aux;
+}
+void sortPret(stoc p[],int &n){
+    int f;
+	do{
+		f=0;
+		for(int i=0;i<n-1;i++){
+			if(p[i].pret<p[i+1].pret){
+				schimb(&p[i],&p[i+1]);
+				f=1;
+			}
+		}
+	}while(f!=0);
+ 
+}
+
+void sortDis(stoc p[],int &n){
+     
+}
 
 // Functiile de filtrare
 void filtru(stoc p[], int n, double minim, double maxim) {
