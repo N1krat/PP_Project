@@ -120,6 +120,11 @@ int main(){
 				}
 				break;
 
+			case '9':
+				// salvarea datelor in fisier
+				salvare(produs, n);
+				break;
+
 			case '0': 
 				// iesire
 				cout << "Multumim ca utilizati programul de inventar!";

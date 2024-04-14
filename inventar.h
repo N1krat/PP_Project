@@ -241,3 +241,38 @@ void cautareCat(stoc p[], int n) {
 	cout << endl;
 }
 
+void salvare(stoc p[],int &n){
+     int nr = 1; 
+     string fileout; 
+     cout << "Introduceti numele fisierului de iesire: "; cin >> fileout;
+	fstream outFile(fileout, ios::out);
+     
+     outFile << setfill('-') << setw(92) << '\n';
+     outFile << setfill(' ');
+     outFile << "| " << setw(5) << "Nr." << " | "
+     << setw(15) << "Categorie" << " | "
+     << setw(11) << "Produsul" << " | "
+     << setw(15) << "Tara de Orig" << " | "
+     << setw(10) << "Pret" << " | "
+     << setw(5) << "Cant" << " | "
+     << setw(8) << "Dispon" << " |" << endl;
+     outFile << setfill('-') << setw(92) << '\n';
+     outFile << setfill(' ');
+
+	for(int i=0;i<n;i++){
+          outFile << "| "<< setw(5) << nr <<" | " 
+          << setw(15) << p[i].cat << " | "
+          << setw(11) << p[i].prod << " | "
+          << setw(15) << p[i].tara << " | "
+          << setw(10) << p[i].pret << " | "
+          << setw(5) << p[i].cantitate << " | "
+          << setw(8) << p[i].disponibilitate << " |" << endl;
+          nr++; 
+	}
+
+
+
+     outFile << setfill('-') << setw(92) << '\n';
+	outFile.close();
+     cout << "Datele au fost salvate cu succes!" << endl;
+}
