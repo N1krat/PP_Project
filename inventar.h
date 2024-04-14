@@ -270,8 +270,6 @@ void salvare(stoc p[],int &n){
           nr++; 
 	}
 
-
-
      outFile << setfill('-') << setw(92) << '\n';
 	outFile.close();
      cout << "Datele au fost salvate cu succes!" << endl;
