@@ -23,21 +23,23 @@ int main(){
 				afisare(produs, n);
 				break;
 
+			// Adaugarea datelor noi
 			case 'b':
 				adaugare(produs, n);
 				break;
 
+			// Stergerea datelor
 			case 'c': { 
 				afisare(produs ,n);
 				cout<<"Cite elemente doriti sa stergeti?"<<endl;
 				int ids;
 				cin>>ids;
-				int e[ids];
-				cout<<"Ce elemene doriti sa stergeti(nr din tabel)"<<endl;
+				int elemt[ids];
+				cout<<"Ce elemene doriti sa stergeti (nr lor din tabel): " << endl;
 				for (int i=0;i<ids;i++){
-					cin>>e[i];
+					cin>>elemt[i];
 				}	
-				sterge(produs, n, e, ids);
+				sterge(produs, n, elemt, ids);
 			} 
 			break; 
 			
@@ -59,6 +61,7 @@ int main(){
 						afisare(produs, n);
 						break; 
 					case 'c': 
+						// lista sortata dupa disponibilitate
 						sortDis(produs, n);
 						break; 
 
@@ -76,13 +79,16 @@ int main(){
 				switch (action)
 				{
 					case 'a':
+						// Cautare dupa produs
 						cautare(produs, n);
 						break;
 
 					case 'b': 
+						// Cautare dupa disponibilitate
 						cautareDisp(produs, n);
 						break;
 					case 'c': 
+						// Cautare dupa categorie
 						cautareCat(produs, n);
 						break;
 					
