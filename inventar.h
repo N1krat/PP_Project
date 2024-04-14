@@ -5,7 +5,8 @@ struct stoc{
 	int cantitate;
 	bool disponibilitate;
 };
-
+const int siz = 92;
+// Citirea 
 void citire(stoc p[],int &n){
 	ifstream inFile("date.in");
 	inFile>>n;
@@ -15,8 +16,9 @@ void citire(stoc p[],int &n){
 	inFile.close();
 }
 
+
 void tab_sus(){
-	cout << setfill('-') << setw(92) << '\n';
+	cout << setfill('-') << setw(siz) << '\n';
      cout << setfill(' ');
      cout << "| " << setw(5) << "Nr." << " | "
      << setw(15) << "Categorie" << " | "
@@ -25,7 +27,7 @@ void tab_sus(){
      << setw(10) << "Pret" << " | "
      << setw(5) << "Cant" << " | "
      << setw(8) << "Dispon" << " |" << endl;
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
      cout << setfill(' ');
 }
 
@@ -47,7 +49,7 @@ void afisare(stoc p[],int n){
      for (int i = 0; i < n; i++) {
          afis(p[i], nr); 
      }
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 }
 
 // Functiile de adaugare
@@ -62,13 +64,13 @@ void adaugare(stoc p[],int &n){
 }
 
 // Functiile de stergere
-void sterge(stoc p[], int &n, int v[], int sizev){
-	for(int i=0;i<sizev;i++){
+void sterge(stoc p[], int &n, int v[], int sizv){
+	for(int i=0;i<sizv;i++){
 		if(v[i]!=n-1){
 			for(int j=v[i]-1;j<n-1;j++){
 				p[j]=p[j+1];	
 			}
-			for(int k=0;k<sizev;k++){
+			for(int k=0;k<sizv;k++){
 				--v[k];
 			}
 		}
@@ -78,8 +80,8 @@ void sterge(stoc p[], int &n, int v[], int sizev){
 }
 
 // Functiile de sortare
-void schimb(stoc* p1, stoc* p2, int size){
-    for(int i = 0; i < size; i++){
+void schimb(stoc* p1, stoc* p2, int siz){
+    for(int i = 0; i < siz; i++){
         stoc temp = p1[i];
         p1[i] = p2[i];
         p2[i] = temp;
@@ -133,7 +135,7 @@ void sortDis(stoc p[],int &n){
              afis(p[i], nr); 
 		}
 	}
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
      cout << "Produsele indisponibile sunt: " << endl; 
      tab_sus();
      for (int i = 0; i < n; i++){ 
@@ -141,7 +143,7 @@ void sortDis(stoc p[],int &n){
                afis(p[i], nr);
           } 
      }
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
 
@@ -159,7 +161,7 @@ void filtru(stoc p[], int n, double minim, double maxim) {
              afis(p[i], nr); 
          }
      }
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
      cout << endl;
 }
 
@@ -175,7 +177,7 @@ void filtru(stoc p[], int n) {
              afis(p[i], nr); 
 		}    
 	}
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
 
@@ -191,7 +193,7 @@ void filtruCat(stoc p[], int n) {
              afis(p[i], nr); 
 		}
 	}
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
 
@@ -208,7 +210,7 @@ void cautare(stoc p[], int n) {
              afis(p[i], nr); 
 		}
 	}
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
 
@@ -221,7 +223,7 @@ void cautareDisp(stoc p[], int n) {
              afis(p[i], nr); 
 		}
 	}
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
 
@@ -237,17 +239,18 @@ void cautareCat(stoc p[], int n) {
              afis(p[i], nr); 
 		}
 	}
-     cout << setfill('-') << setw(92) << '\n';
+     cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
 
+// Salvarea datelor
 void salvare(stoc p[],int &n){
      int nr = 1; 
      string fileout; 
      cout << "Introduceti numele fisierului de iesire: "; cin >> fileout;
 	fstream outFile(fileout, ios::out);
      
-     outFile << setfill('-') << setw(92) << '\n';
+     outFile << setfill('-') << setw(siz) << '\n';
      outFile << setfill(' ');
      outFile << "| " << setw(5) << "Nr." << " | "
      << setw(15) << "Categorie" << " | "
@@ -256,7 +259,7 @@ void salvare(stoc p[],int &n){
      << setw(10) << "Pret" << " | "
      << setw(5) << "Cant" << " | "
      << setw(8) << "Dispon" << " |" << endl;
-     outFile << setfill('-') << setw(92) << '\n';
+     outFile << setfill('-') << setw(siz) << '\n';
      outFile << setfill(' ');
 
 	for(int i=0;i<n;i++){
@@ -270,7 +273,7 @@ void salvare(stoc p[],int &n){
           nr++; 
 	}
 
-     outFile << setfill('-') << setw(92) << '\n';
+     outFile << setfill('-') << setw(siz) << '\n';
 	outFile.close();
      cout << "Datele au fost salvate cu succes!" << endl;
 }

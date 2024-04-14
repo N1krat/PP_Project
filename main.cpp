@@ -4,7 +4,9 @@
 #include <cstring>
 #include "inventar.h"
 using namespace std;
+
 fstream inFile; 
+
 int main(){
 	stoc produs[100];int n; 
 	char action; 
