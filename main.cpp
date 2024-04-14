@@ -13,7 +13,7 @@ int main(){
 	
 	while(true){ 
 		cout << "Introduceti optiunea dorita: ";
-		cout << "\na - afisare\nb - adaugare\nd - sortare\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
+		cout << "\na - afisare\nb - adaugare\nd - sortare\ne - cautare\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
 		cin >> action;
 		switch (action){
 			// afisarea datelor originale
@@ -37,7 +37,7 @@ int main(){
 						sort(produs, n); 
 						afisare(produs, n);
 						break;
-			
+
 					default:
 						cout << "Optiunea introdusa nu este valida. Reincearca.";
 						break;
@@ -45,9 +45,25 @@ int main(){
 				break;
 
 			case 'e': 
-				cautare(produs, n);
+				cout << "Introduceti sub-optiunea dorita: "; 
+				cout << "\na - cautare dupa produs\nb - cautare dupa disponibilitate\nc -  \n";
+				cin >> action;
+				switch (action)
+				{
+					case 'a':
+						cautare(produs, n);
+						break;
+
+					case 'b': 
+						cautareDisp(produs, n);
+						break;
+
+					default:
+						cout << "Optiunea introdusa nu este valida. Reincearca.";
+						break;
+				}
 				break;
-				
+
 			case 'f': 
 				cout << "Introduceti sub-optiunea dorita: ";
 				cout << "\na - filtru dupa pret\nb- filtru dupa nume\nc- filtru dupa categorie\n";

@@ -142,3 +142,19 @@ void cautare(stoc p[], int n) {
 	cout << endl;
 }
 
+
+void cautareDisp(stoc p[], int n) {
+     int nr = 1;
+     cout << "Produsele disponibile sunt:" << endl;
+     tab_sus();
+	for (int i = 0; i < n; i++) {
+		if (p[i].disponibilitate > 0) {
+             afis(p[i], nr); 
+		}
+	}
+     cout << setfill('-') << setw(92) << '\n';
+	cout << endl;
+}
+
+
+
