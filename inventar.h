@@ -16,7 +16,6 @@ void citire(stoc p[],int &n){
 	inFile.close();
 }
 
-
 void tab_sus(){
 	cout << setfill('-') << setw(siz) << '\n';
      cout << setfill(' ');
