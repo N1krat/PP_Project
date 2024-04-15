@@ -1,11 +1,16 @@
 using namespace std;
+
+// crearea structurii
 struct stoc{
 	char cat[21], prod[16], tara[21];
 	double pret;
 	int cantitate;
 	bool disponibilitate;
 };
+
+// marimea antetului
 #define siz 92;
+
 // Citirea 
 void citire(stoc p[],int &n){
 	ifstream inFile("date.in");
