@@ -69,10 +69,10 @@ void adaugare(stoc p[],int &n){
 void sterge(stoc p[], int &n, int v[], int sizv){
 	for(int i=0;i<sizv;i++){
 		if(v[i]!=n-1){
-			for(int j=v[i]-1;j<n-1;j++){
-				p[j]=p[j+1];	
+			for(int j=v[i]-1; j < n - 1 ; j++){
+				p[j] = p[j+1];	
 			}
-			for(int k=0;k<sizv;k++){
+			for(int k=0; k < sizv; k++){
 				--v[k];
 			}
 		}
