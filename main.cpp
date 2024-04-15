@@ -16,8 +16,7 @@ int main(){
 
 	while(true){ 
 		cout << "Introduceti optiunea dorita: ";
-		cout << "\na - afisare\nb - adaugare\nc - stergere\nd - sortare\ne - cautare
-		\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
+		cout << "\na - afisare\nb - adaugare\nc - stergere\nd - sortare\ne - cautare\nf - filtrare\n9 - salvarea datelor in fisier\n0 - iesire\n"; 
 		cin >> action;
 
 		switch (action){

@@ -9,7 +9,7 @@ struct stoc{
 };
 
 // marimea antetului
-#define siz 92;
+const int siz= 92; 
 
 // Citirea 
 void citire(stoc p[],int &n){
@@ -135,23 +135,44 @@ void sortDis(stoc p[],int &n){
      cout << "Introduceti disponibilitatea dorita: ";
      cin >> dis; 
      int nr = 1;
-     cout << "Produsele disponibile sunt:" << endl;
-     tab_sus();
-	for (int i = 0; i < n; i++) {
-		if (p[i].disponibilitate == dis) {
-             afis(p[i], nr); 
-		}
-	}
-     cout << setfill('-') << setw(siz) << '\n';
-     cout << "Produsele indisponibile sunt: " << endl; 
-     tab_sus();
-     for (int i = 0; i < n; i++){ 
-          if (p[i].disponibilitate != dis){
-               afis(p[i], nr);
-          } 
+     if(dis == 1){ 
+          cout << "Produsele disponibile sunt:" << endl;
+          tab_sus();
+          for (int i = 0; i < n; i++) {
+               if (p[i].disponibilitate == dis) {
+               afis(p[i], nr); 
+               }
+          }
+          cout << setfill('-') << setw(siz) << '\n';
+          cout << "Produsele indisponibile sunt: " << endl; 
+          tab_sus();
+          for (int i = 0; i < n; i++){ 
+               if (p[i].disponibilitate != dis){
+                    afis(p[i], nr);
+               } 
+          }
+          cout << setfill('-') << setw(siz) << '\n';
+          cout << endl;
      }
-     cout << setfill('-') << setw(siz) << '\n';
-	cout << endl;
+     if (dis == 0) { 
+          cout << "Produsele indisponibile sunt:" << endl;
+          tab_sus();
+          for (int i = 0; i < n; i++) {
+               if (p[i].disponibilitate == dis) {
+               afis(p[i], nr); 
+               }
+          }
+          cout << setfill('-') << setw(siz) << '\n';
+          cout << "Produsele disponibile sunt: " << endl; 
+          tab_sus();
+          for (int i = 0; i < n; i++){ 
+               if (p[i].disponibilitate != dis){
+                    afis(p[i], nr);
+               } 
+          }
+          cout << setfill('-') << setw(siz) << '\n';
+          cout << endl;
+     }
 }
 
 // Functiile de filtrare
