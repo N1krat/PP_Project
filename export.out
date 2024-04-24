@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------------------
+|   Nr. |       Categorie |    Produsul |    Tara de Orig |       Pret |  Cant |   Dispon |
+-------------------------------------------------------------------------------------------
+|     1 |        Conserve |      Ananas |          Italia |      55.55 |     9 |        0 |
+|     2 |          Fructe |      Banane |      Portugalia |      31.43 |     9 |        0 |
+|     3 |         Bauturi |        Bere |           Cehia |       8.99 |    12 |        0 |
+|     4 |       Curatenie |        Clor |          Grecia |      60.33 |    10 |        1 |
+|     5 |         Bauturi |    CocaCola |         Ucraina |      22.44 |     2 |        1 |
+|     6 |          Marine |        Crap |         Romania |      34.21 |    11 |        0 |
+|     7 |          Igiena |       Crema |         Moldova |      89.33 |     7 |        1 |
+|     8 |       Curatenie |  Detergenti |         Croatia |      47.21 |     8 |        0 |
+|     9 |       Patiserie |       Donut |         Moldova |      13.55 |    13 |        1 |
+|    10 |        Conserve |      Fasole |         Romania |      45.65 |    14 |        1 |
+|    11 |           Carne |       Gaina |         Moldova |      13.44 |     6 |        0 |
+|    12 |       Patiserie |       Kebab |          Turcia |       20.3 |     2 |        1 |
+|    13 |         Lactate |       Lapte |         Romania |      23.55 |     4 |        1 |
+|    14 |          Fructe |        Mere |         Moldova |      13.34 |     1 |        0 |
+|    15 |          Legume |      Morcov |         Moldova |      16.44 |     1 |        0 |
+|    16 |       Patiserie |    Napoleon |          Serbia |       69.6 |     1 |        1 |
+|    17 |       Patiserie |       Paine |         Moldova |        7.2 |     2 |        1 |
+|    18 |   Semi-Finisate |       Paste |          Italia |      50.33 |    11 |        1 |
+|    19 |   Semi-Finisate |     Pelmeni |        Slovacia |      69.96 |    13 |        0 |
+|    20 |         Bauturi |       Pepsi |         Romania |      13.33 |     9 |        1 |
+|    21 |           Carne |        Porc |         Moldova |         13 |     5 |        1 |
+|    22 |          Fructe |   Portocale |          Spania |      45.33 |     6 |        1 |
+|    23 |          Legume |       Rosii |         Ucraina |      14.45 |     3 |        1 |
+|    24 |          Legume |       Rosii |         Moldova |       10.3 |     8 |        0 |
+|    25 |          Igiena |      Sampun |        Germania |      30.44 |     3 |        1 |
+|    26 |         Lactate |    Smantana |         Ucraina |      52.55 |     3 |        1 |
+|    27 |          Marine |       Somon |        Norvegia |      78.33 |     7 |        1 |
+|    28 |         Lactate |         Unt |         Moldova |      34.33 |     1 |        1 |
+|    29 |          Legume |       Varza |         Moldova |       5.66 |     5 |        0 |
+|    30 |        Conserve |        Vita |         Ucraina |      14.33 |     4 |        0 |
+-------------------------------------------------------------------------------------------
