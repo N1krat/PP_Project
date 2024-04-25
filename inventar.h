@@ -94,7 +94,7 @@ void schimb(stoc* p1, stoc* p2, int siz){
         p2[i] = temp;
     }
 }
-
+// Sortarea dupa nume
 void sort(stoc p[],int &n){
      int f;
      cout << "Produsele sortate dupa alfabet: " << endl;
@@ -109,13 +109,14 @@ void sort(stoc p[],int &n){
 		}
 	}while(f!=0);
 }
-
+// Functia pentru schimb 
 void schimb(stoc *p1, stoc *p2){
 	stoc aux; 
 	aux = *p1; 
 	*p1=*p2;
 	*p2=aux;
 }
+// Sortarea dupa pret
 void sortPret(stoc p[],int &n){
     int f;
 	do{
@@ -129,7 +130,7 @@ void sortPret(stoc p[],int &n){
 	}while(f!=0);
  
 }
-
+// Sortarea dupa disponibilitate
 void sortDis(stoc p[],int &n){
      int dis;
      cout << "Introduceti disponibilitatea dorita: ";
@@ -192,7 +193,7 @@ void filtru(stoc p[], int n, double minim, double maxim) {
      cout << setfill('-') << setw(siz) << '\n';
      cout << endl;
 }
-
+// Filtrarea dupa produsul dorit
 void filtru(stoc p[], int n) {
      int nr = 1;
      char prod_cautat[50];
@@ -209,6 +210,7 @@ void filtru(stoc p[], int n) {
 	cout << endl;
 }
 
+// Filtrarea dupa categoria
 void filtruCat(stoc p[], int n) {
      int nr = 1;
      char cat_cautata[50];
@@ -241,7 +243,7 @@ void cautare(stoc p[], int n) {
      cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
-
+// Cautarea dupa disponibilitate
 void cautareDisp(stoc p[], int n) {
      int nr = 1;
      cout << "Produsele disponibile sunt:" << endl;
@@ -254,7 +256,7 @@ void cautareDisp(stoc p[], int n) {
      cout << setfill('-') << setw(siz) << '\n';
 	cout << endl;
 }
-
+// Cautarea dupa categoria
 void cautareCat(stoc p[], int n) {
      int nr = 1;
      char cat_cautata[50];
