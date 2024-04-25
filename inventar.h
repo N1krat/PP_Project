@@ -1,6 +1,6 @@
 using namespace std;
 
-// crearea structurii
+// Crearea structurii
 struct stoc{
 	char cat[21], prod[16], tara[21];
 	double pret;
@@ -8,7 +8,7 @@ struct stoc{
 	bool disponibilitate;
 };
 
-// marimea antetului
+// Marimea antetului
 const int siz= 92; 
 
 // Citirea 
@@ -21,7 +21,7 @@ void citire(stoc p[],int &n){
 	inFile.close();
 }
 
-// crearea antetului
+// Crearea antetului
 void tab_sus(){
 	cout << setfill('-') << setw(siz) << '\n';
      cout << setfill(' ');
@@ -36,7 +36,7 @@ void tab_sus(){
      cout << setfill(' ');
 }
 
-// afisare
+// Afisare
 void afis(stoc p,int &nr){
      cout << "| "<< setw(5) << nr <<" | " 
      << setw(15) << p.cat << " | "
@@ -48,7 +48,7 @@ void afis(stoc p,int &nr){
      nr++; 
 }
 
-// afisare datelor
+// Afisare datelor
 void afisare(stoc p[],int n){
      int nr = 1; 
 	tab_sus();
