@@ -1,4 +1,4 @@
-TO-DO: 
+Functionalitate: 
 1. Afisarea informatiei in forma tabulara ✅
 2. Adaugarea informatiei ✅
 3. Excluderea informatiei ✅
